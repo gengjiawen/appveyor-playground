@@ -13,6 +13,7 @@ init:
 install:
   - node -p "process.cwd()"
   - git clone https://github.com/cjihrig/uvwasi
+  - https://github.com/libuv/libuv
   - choco install clion-ide
   - choco install nodejs
   - choco install mingw
