@@ -11,12 +11,11 @@ init:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 install:
-  - choco install nodejs
   - node -p "process.cwd()"
   - git clone https://github.com/cjihrig/uvwasi
-  - choco install mingw
   - choco install clion-ide
-  - yarn install
+  - choco install nodejs
+  - choco install mingw
 
 build_script:
   - npx envinfo
