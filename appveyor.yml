@@ -16,7 +16,6 @@ install:
   - git clone https://github.com/libuv/libuv
   - choco install clion-ide
   - choco install nodejs
-  - choco install mingw
 
 build_script:
   - npx envinfo
