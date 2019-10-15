@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 image:
-  - Visual Studio 2019
+  - Visual Studio 2017
 
 platform:
   - x64
@@ -12,10 +12,10 @@ init:
 
 install:
   - node -p "process.cwd()"
-  - git clone https://github.com/cjihrig/uvwasi
-  - git clone --recursive https://github.com/saghul/quv
+  - choco install nasm
+  - git clone https://github.com/nodejs/node --depth=1
   - git clone https://github.com/libuv/libuv
-  - choco install clion-ide
+  - choco install vscode clion-ide
   - choco install nodejs
 
 build_script:
