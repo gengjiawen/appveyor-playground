@@ -12,11 +12,11 @@ init:
 
 install:
   - node -p "process.cwd()"
+  - git clone https://github.com/nodejs/node --depth=1
   - git clone https://github.com/cjihrig/uvwasi
   - git clone --recursive https://github.com/saghul/quv
   - git clone https://github.com/libuv/libuv
-  - choco install clion-ide
-  - choco install nodejs
+  - choco install vscode clion-ide nodejs
 
 build_script:
   - npx envinfo
