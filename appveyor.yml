@@ -17,7 +17,7 @@ install:
   - git clone https://github.com/nodejs/node --depth=1
   - git clone https://github.com/cjihrig/uvwasi
   - git clone https://github.com/libuv/libuv
-  - cd node-v8 && .\vcbuild.bat
+  - cd node && .\vcbuild.bat
   - choco install clion-ide nodejs
 
 build_script:
