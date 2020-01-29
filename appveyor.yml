@@ -13,10 +13,11 @@ init:
 install:
   - node -p "process.cwd()"
   - choco install nasm vscode hub
+  - code "C:\projects\appveyor-playground"
   - git clone https://github.com/nodejs/node-gyp
   - cd node-gyp
   - git fetch origin pull/1975/head:vs2017 && git checkout vs2017
-
+  - git log --pretty=oneline
   - yarn
   - yarn test
 
