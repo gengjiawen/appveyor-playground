@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 image:
-  - Visual Studio 2019
+  - Visual Studio 2017
 
 platform:
   - x64
@@ -12,13 +12,12 @@ init:
 
 install:
   - node -p "process.cwd()"
-  - choco install nasm vscode 
-  - git clone https://github.com/nodejs/node-v8 --depth=1 
-  - git clone https://github.com/nodejs/node --depth=1
-  - git clone https://github.com/cjihrig/uvwasi
-  - git clone https://github.com/libuv/libuv
-  - cd node-v8 && .\vcbuild.bat
-  - choco install clion-ide nodejs
+  - choco install nasm vscode hub
+  - git clone https://github.com/nodejs/node-gyp
+  - cd node-gyp
+  - hub pr checkout 1975
+  - yarn
+  - yarn test
 
 build_script:
   - npx envinfo
