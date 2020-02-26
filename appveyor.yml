@@ -13,11 +13,11 @@ init:
 install:
   - node -p "process.cwd()"
   - choco install nasm vscode 
-  - git clone https://github.com/nodejs/node-v8 --depth=1 
-  - git clone https://github.com/nodejs/node --depth=1
+  - git clone https://github.com/nodejs/node-v8 --depth=10 
+  - git clone https://github.com/nodejs/node --depth=10
   - git clone https://github.com/cjihrig/uvwasi
   - git clone https://github.com/libuv/libuv
-  - cd node-v8 && .\vcbuild.bat
+  - cd node && git checkout -b canary origin/canary-base && .\vcbuild.bat
   - choco install clion-ide nodejs
 
 build_script:
