@@ -15,10 +15,8 @@ install:
   - node -p "process.cwd()"
   - choco install nasm vscode 
   - git clone https://github.com/gengjiawen/node-v8 --depth=10 
-  - git clone -b canary-base --single-branch https://github.com/nodejs/node --depth=10
-  - git clone https://github.com/cjihrig/uvwasi
-  - git clone https://github.com/libuv/libuv
-  - cd node-v8 && .\vcbuild.bat
+  - git clone -b v8-84 --single-branch https://github.com/targos/node --depth=10
+  - cd node && .\vcbuild.bat
   - refreshenv && code .
   - choco install clion-ide nodejs
   
