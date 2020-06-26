@@ -1,28 +1,10 @@
-version: 1.0.{build}
-
-image:
-  - Visual Studio 2019 
-
-platform:
-  - x64
-
-init:
-  - git config --global core.autocrlf input
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+image: macOS
 
 install:
   - node -p "process.cwd()"
-  - choco install nasm vscode nodejs visualstudio2019buildtools
   - npx envinfo
-  - git clone -b vs2019-build --single-branch https://github.com/gengjiawen/node-v8 --depth=10
-  - git clone https://github.com/nodejs/node --depth=1
-  - git clone https://github.com/cjihrig/uvwasi
-  - git clone https://github.com/libuv/libuv
-  - cd node-v8 && .\vcbuild.bat
-  - choco install clion-ide
 
-  
 on_finish:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
+  - sh: export APPVEYOR_VNC_BLOCK=true
+  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-vnc.sh' | bash -e -
 test: off
