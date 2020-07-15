@@ -14,11 +14,11 @@ install:
   - node -p "process.cwd()"
   - choco install nasm vscode nodejs
   - npx envinfo
-  - git clone https://github.com/nodejs/node-v8 --depth=10
-  - git clone -b pull/34337 --single-branch https://github.com/gengjiawen/node --depth=1
+#   - git clone https://github.com/nodejs/node-v8 --depth=10
+  - git clone -b pull/34337 --single-branch https://github.com/gengjiawen/node --depth=10
   - git clone https://github.com/cjihrig/uvwasi
   - git clone https://github.com/libuv/libuv
-  - cd node && .\vcbuild.bat
+  - cd node && .\vcbuild.bat nosnapshot
   - choco install clion-ide
 
   
