@@ -3,6 +3,9 @@ image: macOS
 install:
   - node -p "process.cwd()"
   - npx envinfo
+  - sudo spctl --master-disable
+  - brew install node fish
+  - brew cask install visual-studio-code
 
 on_finish:
   - sh: export APPVEYOR_VNC_BLOCK=true
