@@ -1,4 +1,4 @@
-image: macOS
+image: macos-mojave
 
 install:
   - node -p "process.cwd()"
