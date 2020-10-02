@@ -16,10 +16,10 @@ install:
   - npx envinfo
   - cd C:\users\appveyor\Desktop
 #   - git clone https://github.com/nodejs/node-v8 --depth=10
-#   - git clone -b v8-85 --single-branch https://github.com/targos/node --depth=10
+  - git clone -b clang-cl --single-branch https://github.com/targos/node --depth=10
   - git clone https://github.com/cjihrig/uvwasi
   - git clone https://github.com/libuv/libuv
-#   - cd node && .\vcbuild.bat arm64
+  - cd node && .\vcbuild.bat noetw
   - choco install clion-ide
 
   
