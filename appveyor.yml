@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 image:
-  - Visual Studio 2019 
+  - Visual Studio 2019 Preview
 
 platform:
   - x64
@@ -15,9 +15,6 @@ install:
   - choco install nasm vscode nodejs
   - npx envinfo
   - cd C:\users\appveyor\Desktop
-#   - git clone https://github.com/nodejs/node-v8 --depth=10
-  - git clone -b v8-85 --single-branch https://github.com/targos/node --depth=10	
-#   - git clone -b clang-cl --single-branch https://github.com/gengjiawen/node --depth=10
   - git clone https://github.com/cjihrig/uvwasi
   - git clone https://github.com/libuv/libuv
 #   - cd node && .\vcbuild.bat noetw
